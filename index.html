@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+       <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-106596218-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-106596218-1");
+    </script>
+    <meta charset="UTF-8" />
+    <title>Payment Button Generator</title>
+    <style>
+      #render {
+        text-align: center;
+      }
+      .question {
+        background: #209769;
+        padding: 6px;
+        margin-bottom: 13px;
+      }
+      .question p:first-child {
+        font-weight: bold;
+      }
+      .group {
+        padding: 10px;
+      }
+      .sidetext {
+        float: left;
+        margin-right: 26px;
+        font-size: 40px;
+        width: 200px;
+        color: #1670c4;
+        margin-top: 8px;
+      }
+      input {
+        font-size: 26px;
+        padding: 7px;
+        width: 300px;
+      }
+      #generated {
+        width: 100%;
+        background: grey;
+        padding: 20px;
+        color: aquamarine;
+        font-size: medium;
+        line-height: 1.5;
+        font-family: Courier;
+      }
+    </style>
+  </head>
+  <body
+    background="https://www.freecodecamp.org/news/content/images/2021/06/w-qjCHPZbeXCQ-unsplash.jpg "
+    background-size:
+  >
+    <div id="fb-root"></div>
+    <script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1870575853268673";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <h1>𝓤𝓟𝓘 𝓑𝓤𝓣𝓣𝓞𝓝 𝓖𝓔𝓝𝓔𝓡𝓐𝓣𝓞𝓡</h1>
+    <div>
+      <div class="group">
+        <div class="sidetext">Button Text</div>
+        <input id="buttontext" type="text" value="ENTER YOUR UPI ID" />
+      </div>
+      <div class="group">
+        <div class="sidetext">Name</div>
+        <input id="vpaname" type="text" value="CRACKINGFACTORY" />
+      </div>
+      <div class="group">
+        <div class="sidetext">UPI Id</div>
+        <input id="vpa" type="text" value="7303556***@upi" />
+      </div>
+    </div>
+
+    <h1>Button Design</h1>
+    <div id="render">
+      <a
+        href="upi://pay?pa=9891341086@upi&pn=NARENDRA SISODIYA&cu=INR"
+        id="__UPI_BUTTON__"
+        style="
+          background: #a131ce;
+          border: 2px solid #8a4100;
+          padding: 10px;
+          text-decoration: none;
+          color: rgb(12, 12, 12);
+          font-size: larger;
+          border-radius: 10px;
+        "
+      ></a>
+    </div>
+
+    <h1>Button Code</h1>
+    <div id="generated">--</div>
+
+    <script>
+            function htmlEntities(str) {
+        return String(str).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+
+      function generateFullCode() {
+        var buttontext = document.getElementById("buttontext").value;
+        var vpa = document.getElementById("vpa").value;
+        var vpaname = document.getElementById("vpaname").value.toUpperCase();
+        var url = "upi://pay?pa=" + vpa + "&pn=" + vpaname + "&cu=INR";
+
+        var abutton = document.getElementById("__UPI_BUTTON__");
+        abutton.setAttribute("href", url);
+        abutton.innerText = buttontext;
+
+        var code = document.getElementById("render").innerHTML;
+        document.getElementById("generated").innerHTML = htmlEntities(code);
+      }
+            document
+        .getElementById("buttontext")
+        .addEventListener("keyup", function () {
+          generateFullCode();
+        });
+      document.getElementById("vpa").addEventListener("keyup", function () {
+        generateFullCode();
+      });
+      document.getElementById("vpaname").addEventListener("keyup", function () {
+        generateFullCode();
+      });
+      generateFullCode();
+    </script>
+  </body>
+</html>
