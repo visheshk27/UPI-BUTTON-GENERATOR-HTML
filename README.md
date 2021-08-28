@@ -1,3 +1,3 @@
 # UPI-BUTTON-GENERATOR-HTML
 IT AUTOMATICALLY CREATES UPI-BUTTON FOR YOU WHICH COULD BE USED TO RECEIVE MONEY FROM YOUR CLIENTS
-![alt text](https://github.com/visheshk27/EDU-HACK/blob/main/3.PNG?raw=true)
+![alt text](https://github.com/visheshk27/UPI-BUTTON-GENERATOR-HTML/blob/main/UPI.PNG&raw=true)
